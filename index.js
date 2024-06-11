@@ -41,7 +41,10 @@ app.get('/', (req, res) => {
 });
 // app.use('/api-docs', swaggerUI.serve, swaggerUI.setup(swaggerDocument));
 
-// 
+// Apply the authentication middleware to the /api/v1/jobs routes
+app.use('/api/v1/auth', authRouter);
+app.use('/api/v1/jobs', authenticateUser, jobsRouter);
+
 app.use(notFoundMiddleware);
 app.use(errorHandlerMiddleware);
 
