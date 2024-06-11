@@ -1,0 +1,178 @@
+{
+    "clientName": "Thunder Client",
+    "collectionName": "Jobs Api",
+    "collectionId": "69ac3a28-baaf-4d5e-91c8-bc286f1a16b4",
+    "dateExported": "2024-06-11T10:28:30.774Z",
+    "version": "1.2",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "c1f5133a-3df9-4b72-acbc-5b8e1646a709",
+            "colId": "69ac3a28-baaf-4d5e-91c8-bc286f1a16b4",
+            "containerId": "",
+            "name": "login",
+            "url": "http://localhost:3000/api/v1/auth/login",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2024-05-22T07:23:31.167Z",
+            "modified": "2024-05-28T07:27:23.447Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "bearer ",
+                    "isDisabled": true
+                }
+            ],
+            "body": {
+                "type": "json",
+                "raw": "{ \n  \"mail\":\"dhingrammehrqwqweul@gmail.com\",\n  \"password\":\"1231124\"\n}",
+                "form": []
+            },
+            "postReq": {
+                "inlineScripts": [
+                    {
+                        "script": [
+                            "const jsonData = tc.response.json()",
+                            "tc.globals.set(\"accessToken\",jsonData.token)"
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "_id": "c615ea5a-cf8b-40b0-92e0-bf542c50d40e",
+            "colId": "69ac3a28-baaf-4d5e-91c8-bc286f1a16b4",
+            "containerId": "",
+            "name": "register",
+            "url": "http://localhost:3000/api/v1/auth/register",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2024-05-24T07:50:07.839Z",
+            "modified": "2024-05-28T07:33:08.580Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{ \n  \"name\":\"dhingra\",\n  \"mail\":\"dhingrammehrqwqweul@gmail.com\",\n  \"password\":\"1231124\"\n}",
+                "form": []
+            },
+            "postReq": {
+                "inlineScripts": [
+                    {
+                        "script": [
+                            "const jsonData = tc.response.json()",
+                            "tc.globals.set(\"accessToken\",jsonData.token)"
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "_id": "bc744bc3-d56a-4dc4-96d9-6b548477e29a",
+            "colId": "69ac3a28-baaf-4d5e-91c8-bc286f1a16b4",
+            "containerId": "",
+            "name": "Create Job",
+            "url": "http://localhost:3000/api/v1/jobs",
+            "method": "POST",
+            "sortNum": 30000,
+            "created": "2024-05-24T09:56:57.049Z",
+            "modified": "2024-06-04T14:14:09.836Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NTA2YjNjYTA2YmZjMTUwYzhhNmY0MSIsInVzZXJuYW1lIjoiZGhpbmdyYSIsImlhdCI6MTcxNjU0NjM3OCwiZXhwIjoxNzE5MTM4Mzc4fQ.VGqIUSp3rl6YHTQJghM8lkdonfpC8-qj11W1EeesTNw"
+                }
+            ],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"company\":\"google\",\n  \"position\" :\"interview\",\n  \"status\":\"pending\"\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "02cb7557-cd88-481d-bd49-a14414f5cad7",
+            "colId": "69ac3a28-baaf-4d5e-91c8-bc286f1a16b4",
+            "containerId": "",
+            "name": "Get All",
+            "url": "http://localhost:3000/api/v1/jobs",
+            "method": "GET",
+            "sortNum": 40000,
+            "created": "2024-05-27T14:23:59.866Z",
+            "modified": "2024-05-28T07:40:03.068Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NTA2YjNjYTA2YmZjMTUwYzhhNmY0MSIsInVzZXJuYW1lIjoiZGhpbmdyYSIsImlhdCI6MTcxNjU0NjM3OCwiZXhwIjoxNzE5MTM4Mzc4fQ.VGqIUSp3rl6YHTQJghM8lkdonfpC8-qj11W1EeesTNw"
+                }
+            ]
+        },
+        {
+            "_id": "2ae0a798-9a05-4fab-84bf-da60bac20a64",
+            "colId": "69ac3a28-baaf-4d5e-91c8-bc286f1a16b4",
+            "containerId": "",
+            "name": "Get",
+            "url": "http://localhost:3000/api/v1/jobs/665589dbcbfcca40d8390a84",
+            "method": "GET",
+            "sortNum": 50000,
+            "created": "2024-05-28T07:38:58.613Z",
+            "modified": "2024-06-04T13:18:43.670Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NTA2YjNjYTA2YmZjMTUwYzhhNmY0MSIsInVzZXJuYW1lIjoiZGhpbmdyYSIsImlhdCI6MTcxNjU0NjM3OCwiZXhwIjoxNzE5MTM4Mzc4fQ.VGqIUSp3rl6YHTQJghM8lkdonfpC8-qj11W1EeesTNw"
+                }
+            ]
+        },
+        {
+            "_id": "1dd82911-c7ca-4225-97d2-31939159cbf4",
+            "colId": "69ac3a28-baaf-4d5e-91c8-bc286f1a16b4",
+            "containerId": "",
+            "name": "Update",
+            "url": "http://localhost:3000/api/v1/jobs/665f21311090151d78f7be11",
+            "method": "PATCH",
+            "sortNum": 60000,
+            "created": "2024-06-04T13:17:43.847Z",
+            "modified": "2024-06-04T14:14:35.221Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NTA2YjNjYTA2YmZjMTUwYzhhNmY0MSIsInVzZXJuYW1lIjoiZGhpbmdyYSIsImlhdCI6MTcxNjU0NjM3OCwiZXhwIjoxNzE5MTM4Mzc4fQ.VGqIUSp3rl6YHTQJghM8lkdonfpC8-qj11W1EeesTNw"
+                }
+            ],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"company\":\"mircosoft\",\n  \"position\" :\"interview\",\n  \"status\":\"interview\"\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "259c4e52-8b7d-48f5-8cd7-0ff7ec0362e5",
+            "colId": "69ac3a28-baaf-4d5e-91c8-bc286f1a16b4",
+            "containerId": "",
+            "name": "Delete",
+            "url": "http://localhost:3000/api/v1/jobs/665496abcb67c02f9cf1cd7f",
+            "method": "DELETE",
+            "sortNum": 70000,
+            "created": "2024-06-04T13:27:25.888Z",
+            "modified": "2024-06-04T13:27:55.780Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NTA2YjNjYTA2YmZjMTUwYzhhNmY0MSIsInVzZXJuYW1lIjoiZGhpbmdyYSIsImlhdCI6MTcxNjU0NjM3OCwiZXhwIjoxNzE5MTM4Mzc4fQ.VGqIUSp3rl6YHTQJghM8lkdonfpC8-qj11W1EeesTNw"
+                }
+            ]
+        },
+        {
+            "_id": "321f0e87-502f-4468-8153-5b001b014d34",
+            "colId": "69ac3a28-baaf-4d5e-91c8-bc286f1a16b4",
+            "containerId": "",
+            "name": "Delete All",
+            "url": "",
+            "method": "GET",
+            "sortNum": 80000,
+            "created": "2024-06-04T13:36:15.530Z",
+            "modified": "2024-06-04T13:36:15.530Z",
+            "headers": []
+        }
+    ],
+    "ref": "jTA1qqdVeEC_1cTEp0_-5Dl_uVerh6xlrdU75zTyIiGJoHlcj9EfX_zGSIuKvCvHdydOmXieUyqyEVUiVSClSg"
+}
