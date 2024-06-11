@@ -4,8 +4,8 @@ require('express-async-errors');
 const express = require('express');
 const app = express();
 
-// const swaggerUI = require('swagger-ui-express');
-// const YAML = require('yamljs');
+const swaggerUI = require('swagger-ui-express');
+const YAML = require('yamljs');
 // const swaggerDocument = YAML.load('./swagger.yaml');
 
 const helmet = require('helmet');
@@ -41,7 +41,7 @@ app.get('/', (req, res) => {
 });
 // app.use('/api-docs', swaggerUI.serve, swaggerUI.setup(swaggerDocument));
 
-// s
+// 
 app.use(notFoundMiddleware);
 app.use(errorHandlerMiddleware);
 
