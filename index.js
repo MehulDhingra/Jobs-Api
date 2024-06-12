@@ -1,25 +1,26 @@
 require('dotenv').config();
 require('express-async-errors');
 
-// extra security packages
+const path = require('path');
 const helmet = require('helmet');
 const cors = require('cors');
 const xss = require('xss-clean');
 const rateLimiter = require('express-rate-limit');
 
-// Swagger
 const swaggerUI = require('swagger-ui-express');
 const YAML = require('yamljs');
-const swaggerDocument = YAML.load('./swagger.yaml');
+const swaggerDocument = YAML.load(path.join(__dirname, 'swagger.yaml'));
 
 const express = require('express');
 const app = express();
 
 const connectDB = require('./db/connect');
 const authenticateUser = require('./middleware/authentication');
+
 // routers
 const authRouter = require('./routes/auth');
 const jobsRouter = require('./routes/jobs');
+
 // error handler
 const notFoundMiddleware = require('./middleware/not-found');
 const errorHandlerMiddleware = require('./middleware/error-handler');
