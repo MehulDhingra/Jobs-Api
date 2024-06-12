@@ -6,7 +6,7 @@ const app = express();
 
 const swaggerUI = require('swagger-ui-express');
 const YAML = require('yamljs');
-// const swaggerDocument = YAML.load('./swagger.yaml');
+const swaggerDocument = YAML.load('./swagger.yaml');
 
 const helmet = require('helmet');
 const cors = require('cors');
@@ -39,7 +39,7 @@ app.use(xss())
 app.get('/', (req, res) => {
   res.send('<h1>Jobs API</h1><a href="/api-docs">Documentation</a>');
 });
-// app.use('/api-docs', swaggerUI.serve, swaggerUI.setup(swaggerDocument));
+app.use('/api-docs', swaggerUI.serve, swaggerUI.setup(swaggerDocument));
 
 // Apply the authentication middleware to the /api/v1/jobs routes
 app.use('/api/v1/auth', authRouter);

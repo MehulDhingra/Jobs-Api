@@ -1,0 +1,162 @@
+swagger: '2.0'
+info:
+  version: '1.0'
+  title: JOBS-API
+  description: 'TODO: Add Description'
+  contact: {}
+host: jobs-api-rust-sigma.vercel.app
+basePath: /
+securityDefinitions: {}
+schemes:
+- https
+consumes:
+- application/json
+produces:
+- application/json
+paths:
+  /auth/login:
+    post:
+      summary: login
+      tags:
+      - User
+      operationId: login
+      deprecated: false
+      produces:
+      - application/json
+      parameters: []
+      responses:
+        '200':
+          description: 'Successful login'
+          headers: {}
+      security: []
+  /auth/register:
+    post:
+      summary: register
+      tags:
+      - User
+      operationId: register
+      deprecated: false
+      produces:
+      - application/json
+      parameters: []
+      responses:
+        '200':
+          description: 'Successful registration'
+          headers: {}
+      security: []
+  /jobs:
+    post:
+      summary: Create Job
+      tags:
+      - jobs
+      operationId: CreateJob
+      deprecated: false
+      produces:
+      - application/json
+      parameters:
+      - name: Authorization
+        in: header
+        required: false
+        default: Bearer {token}
+        type: string
+      responses:
+        '200':
+          description: 'Job created successfully'
+          headers: {}
+    get:
+      summary: Get All
+      tags:
+      - jobs
+      operationId: GetAll
+      deprecated: false
+      produces:
+      - application/json
+      parameters:
+      - name: Authorization
+        in: header
+        required: false
+        default: Bearer {token}
+        type: string
+      responses:
+        '200':
+          description: 'Retrieved all jobs'
+          headers: {}
+  /jobs/{id}:
+    get:
+      summary: Get
+      tags:
+      - jobs
+      operationId: Get
+      deprecated: false
+      produces:
+      - application/json
+      parameters:
+      - name: Authorization
+        in: header
+        required: false
+        default: Bearer {token}
+        type: string
+      responses:
+        '200':
+          description: 'Retrieved job'
+          headers: {}
+    patch:
+      summary: Update
+      tags:
+      - jobs
+      operationId: Update
+      deprecated: false
+      produces:
+      - application/json
+      parameters:
+      - name: Authorization
+        in: header
+        required: false
+        default: Bearer {token}
+        type: string
+      responses:
+        '200':
+          description: 'Job updated successfully'
+          headers: {}
+    delete:
+      summary: Delete
+      tags:
+      - jobs
+      operationId: Delete
+      deprecated: false
+      produces:
+      - application/json
+      parameters:
+      - name: Authorization
+        in: header
+        required: false
+        default: Bearer {token}
+        type: string
+      responses:
+        '200':
+          description: 'Job deleted successfully'
+          headers: {}
+  /:
+    get:
+      summary: Delete All
+      tags:
+      - jobs
+      operationId: DeleteAll
+      deprecated: false
+      produces:
+      - application/json
+      parameters:
+      - name: Authorization
+        in: header
+        required: false
+        default: Bearer {token}
+        type: string
+      responses:
+        '200':
+          description: 'All jobs deleted'
+          headers: {}
+tags:
+- name: User
+  description: 'Operations related to user authentication'
+- name: jobs
+  description: 'Operations related to job management'
