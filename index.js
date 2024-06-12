@@ -60,6 +60,8 @@ const start = async () => {
   } catch (error) {
     console.log(error);
   }
-};
 
-start();
+}
+// start();
+
+module.exports = app;
